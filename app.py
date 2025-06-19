@@ -1,3 +1,6 @@
+import streamlit as st
+import pandas as pd
+import joblib
 
 model = joblib.load("obesitymodel_v170.pkl") 
 
