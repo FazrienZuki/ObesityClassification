@@ -1,11 +1,7 @@
-import streamlit as st
-import pandas as pd
-import joblib
 
-# Load model saved with sklearn 1.7.0
-model = joblib.load("obesitymodel_v170.pkl")  # Make sure this is retrained & resaved
+model = joblib.load("obesitymodel_v170.pkl") 
 
-st.title("Obesity Level Predictor")
+st.title("Obesity Level Prediction")
 st.markdown("Predict obesity level based on your physical and lifestyle attributes.")
 
 # User input form
@@ -30,7 +26,6 @@ with st.form("prediction_form"):
     submit = st.form_submit_button("Predict")
 
 if submit:
-    # Prepare input DataFrame
     input_data = pd.DataFrame({
         "Gender": [gender],
         "Age": [age],
